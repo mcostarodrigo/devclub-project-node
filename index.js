@@ -1,11 +1,13 @@
 const { request } = require('express')
 const express = require('express')  /*importando a bibliioteca para a aplicação*/
 const uuid = require('uuid')
+import cors from 'cors'
 
-const port = 3000 /*nesse caso, a porta foi colocada em uma variável*/
+const port = 3001 /*nesse caso, a porta foi colocada em uma variável*/
 
 const app = express() /*Para tornar mais fácil chmar a biblioteca*/
 app.use(express.json()) /*Avisando que vai ser usado json colocar n aparte de cima antes das rotas*/
+app.use(cors())
 
 /*Criando a rota*/
 
@@ -79,7 +81,7 @@ const age = request.query.age*/
 
 /*return response.json({name: name, age: age}) /*Quando o nome da chave e do valor são os mesmos pode omitir uma informação*/
 
-app.listen(3000)
+app.listen(3001)
 
 /*porta 3000 está sendo usada*/
 
