@@ -1,7 +1,7 @@
 const { request } = require('express')
 const express = require('express')  /*importando a bibliioteca para a aplicação*/
 const uuid = require('uuid')
-import cors from 'cors'
+const cors = require ('cors')
 
 const port = 3001 /*nesse caso, a porta foi colocada em uma variável*/
 
@@ -67,7 +67,9 @@ app.delete('/users/:id', checkUserId, (request, response) => {
     return response.status(204).json()
 })
 
-
+app.listen(port, () => {
+    console.log(`Server started on port ${port} `)
+})
 
 
 
@@ -81,7 +83,7 @@ const age = request.query.age*/
 
 /*return response.json({name: name, age: age}) /*Quando o nome da chave e do valor são os mesmos pode omitir uma informação*/
 
-app.listen(3001)
+
 
 /*porta 3000 está sendo usada*/
 
